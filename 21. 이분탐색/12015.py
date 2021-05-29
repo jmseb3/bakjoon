@@ -8,7 +8,7 @@ def checkis(a:list):
     else:
         return False
 
-n =int(input)
+n =int(input())
 arr = list(map(int,input().split()))
 
 start = 0
@@ -19,7 +19,7 @@ while start <= end:
     temp = 0
     for i in range(1, n+1):
         temp += min(mid//i, n)
-    if temp >= k:
+    if temp >= :
         ans = mid
         end = mid-1
     else:
