@@ -1,6 +1,6 @@
 def bunha(n):
-    if n < 10:
-        return n
+    if(n < 10):
+        return 2*n
     sum = n
     while True:
         if n >= 10:
@@ -13,12 +13,9 @@ def bunha(n):
 
 
 n = int(input())
-check = []
-for i in range(1,n):
-    if bunha(i) == n :
-        check.append(i)
-
-if len(check) == 0:
-    print(0)
-else:
-    print(check[0])
+ans = 0
+for i in range(1, n+1):
+    if(bunha(i) == n):
+        ans = i
+        break
+print(ans)

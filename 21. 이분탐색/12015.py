@@ -1,28 +1,31 @@
 import sys
-
 input = sys.stdin.readline
 
-def checkis(a:list):
+
+def checkis(a: list):
     if (a == a.sort):
         return True
     else:
         return False
 
-n =int(input())
-arr = list(map(int,input().split()))
 
-start = 0
-end = n
-while start <= end:
-    mid = (start+end)//2
+n = int(input())
+arr = list(map(int, input().split()))
+dp = [0]
 
-    temp = 0
-    for i in range(1, n+1):
-        temp += min(mid//i, n)
-    if temp >= :
-        ans = mid
-        end = mid-1
+for i in range(n):
+    low = 0
+    high = len(dp)-1
+    while low <= high:
+        mid = (low+high)//2
+        if dp[mid] < arr[i]:
+            low = mid+1
+        else:
+            high = mid-1
+    if low >= len(dp):
+        dp.append(arr[i])
     else:
-        start=mid + 1
+        dp[low] = arr[i]
+    print(dp)
 
-print(ans)
+print(len(dp)-1)
