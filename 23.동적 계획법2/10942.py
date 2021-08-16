@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 n = int(input())
 arr = list(map(int, input().split()))
 dp = [[0 for _ in range(n)] for _ in range(n)]
